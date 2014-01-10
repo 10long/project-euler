@@ -1,0 +1,10 @@
+(let (value)
+  (dotimes (i 999 value)
+    (cond 
+      ((and (= (mod (1+ i) 3) 0) (= (mod (1+ i) 5) 0))
+       (setq value (cons (1+ i) value)))
+      ((= (mod (1+ i) 3) 0)
+       (setq value (cons (1+ i) value)))
+      ((= (mod (1+ i) 5) 0)
+       (setq value (cons (1+ i) value)))))
+  (reduce '+ value))
